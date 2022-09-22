@@ -1,6 +1,7 @@
 import math
 import itertools
-#from numpy.linalg import norm
+from numpy import dot
+from numpy.linalg import norm
 
 def euclidean_dist(x, y):
     res = 0
@@ -17,7 +18,6 @@ def jaccard_dist(a, b):
     return float(len(c)) / (len(a) + len(b) - len(c))
 
 def cosine_sim(a, b):
-    return dot(a, b)/((a)*(b))
-def dot(v1, v2):
-    return sum(x*y for x, y in zip(v1, v2))
+    return dot(a, b)/(norm(a)*norm(b))
+
 # Feel free to add more
